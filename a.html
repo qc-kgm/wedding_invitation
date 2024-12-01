@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiệu Ứng Trái Tim Rơi</title>
+    <style>
+        /* CSS Inline */
+
+        /* Container chứa các trái tim */
+        #heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Cho phép click qua container */
+            overflow: hidden;
+            z-index: 9999; /* Đảm bảo container nằm trên cùng */
+        }
+
+        /* Kiểu dáng của trái tim */
+        .heart {
+            position: absolute;
+            top: -50px; /* Bắt đầu ngoài màn hình */
+            width: 20px;
+            height: 20px;
+            animation: fall 5s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        /* Keyframes cho hiệu ứng rơi */
+        @keyframes fall {
+            0% {
+        transform: translate(0, 0) ;
+        opacity: 1;
+    }
+    25% {
+        transform: translate(40px, 25vh);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-40px, 50vh) ;
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(40px, 75vh) ;
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(0, 100vh) ;
+        opacity: 0;
+    }
+        }
+    </style>
+</head>
+<body>
+    <!-- Container chứa các trái tim -->
+    <div id="heart-container"></div>
+
+    <!-- Nội dung khác của trang web -->
+    <h1 style="text-align: center; margin-top: 50px;">Chào mừng đến với trang web của tôi!</h1>
+
+    <script>
+        // JavaScript Inline
+
+        // Lấy container chứa trái tim
+        const heartContainer = document.getElementById('heart-container');
+
+        // Mảng màu sắc cho trái tim
+        const colors = ['#FF69B4', '#FFB6C1', '#FFC0CB', '#DB7093', '#FF1493'];
+
+        // Hàm tạo một trái tim mới
+        function createHeart() {
+            const heart = document.createElement('img');
+            heart.src = 'img/icons8-heart-94.png'; 
+            heart.classList.add('heart');
+
+            // Vị trí xuất hiện ngẫu nhiên trên trục X
+            heart.style.left = Math.random() * 100 + 'vw';
+
+            // Kích thước ngẫu nhiên
+            const size = Math.random() * 30 + 30; // 10px đến 30px
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+
+
+            // Thời gian rơi ngẫu nhiên
+            const duration = Math.random() * 5 + 6; // 3s đến 8s
+            heart.style.animationDuration = duration + 's';
+
+            // Độ trễ animation ngẫu nhiên
+            heart.style.animationDelay = Math.random() * 5 + 's';
+
+            // Thêm trái tim vào container
+            heartContainer.appendChild(heart);
+
+            // Xóa trái tim sau khi animation kết thúc
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+
+        // Tạo trái tim mỗi 500ms
+        setInterval(createHeart, 1000);
+    </script>
+</body>
+</html>

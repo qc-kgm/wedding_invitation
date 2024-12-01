@@ -17,11 +17,11 @@
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="Quốc Anh & Trần Hằng getting hitched">
     <meta property="og:description" content="We would like to invite you to our big day.">
-    <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-min.jpg">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1615721383885-a969b63d708f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-lg2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 
@@ -61,6 +61,73 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
         onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <style>
+        /* CSS Inline */
+
+        /* Container chứa các trái tim */
+        #heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Cho phép click qua container */
+            overflow: hidden;
+            z-index: 9999; /* Đảm bảo container nằm trên cùng */
+        }
+
+        /* Kiểu dáng của trái tim */
+        .heart {
+            position: absolute;
+            top: -50px; /* Bắt đầu ngoài màn hình */
+            width: 20px;
+            height: 20px;
+            animation: fall 5s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        /* Keyframes cho hiệu ứng rơi */
+        @keyframes fall {
+            0% {
+        transform: translate(0, 0) ;
+        opacity: 1;
+    }
+    25% {
+        transform: translate(40px, 25vh);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-40px, 50vh) ;
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(40px, 75vh) ;
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(0, 100vh) ;
+        opacity: 0;
+    }
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -126,7 +193,7 @@
             </div>
         </div>
     </section>
-
+    <div id="heart-container"></div>
     <!-- <section id="intro">
     <div class="container">
         <div class="row">
@@ -260,7 +327,7 @@
             const musicButton = document.getElementById('musicButton');
             const backgroundMusic = document.getElementById('backgroundMusic');
             const icon = document.getElementById('icon');
-
+            setInterval(createHeart, 1500);
             let isPlaying = false;
             let userPaused = false;
             // Hiệu ứng ripple
@@ -317,6 +384,37 @@
             }
         });
 
+        const heartContainer = document.getElementById('heart-container');
+        function createHeart() {
+            const heart = document.createElement('img');
+            heart.src = 'img/icons8-heart-94.png'; 
+            heart.classList.add('heart');
+
+            // Vị trí xuất hiện ngẫu nhiên trên trục X
+            heart.style.left = Math.random() * 100 + 'vw';
+
+            // Kích thước ngẫu nhiên
+            const size = Math.random() * 30 + 30; // 10px đến 30px
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+
+
+            // Thời gian rơi ngẫu nhiên
+            const duration = Math.random() * 5 + 6; // 3s đến 8s
+            heart.style.animationDuration = duration + 's';
+
+            // Độ trễ animation ngẫu nhiên
+            heart.style.animationDelay = Math.random() * 5 + 's';
+
+            // Thêm trái tim vào container
+            heartContainer.appendChild(heart);
+
+            // Xóa trái tim sau khi animation kết thúc
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+    
     </script>
 
     <!-- Ripple Effect Keyframes -->
