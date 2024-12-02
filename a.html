@@ -1,8 +1,68 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
-    <meta charset="UTF-8">
-    <title>Hiệu Ứng Trái Tim Rơi</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quốc Anh & Trần Hằng getting hitched!</title>
+    <meta name="description" content="We would like to invite you to our big day.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Quốc Anh & Trần Hằng getting hitched">
+    <meta property="og:description" content="We would like to invite you to our big day.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1615721383885-a969b63d708f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-lg2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+        // load js files from CDN if local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
+        onerror="loadCssFromCDN('font-awesome.css')">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
     <style>
         /* CSS Inline */
 
@@ -13,15 +73,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Cho phép click qua container */
+            pointer-events: none;
+            /* Cho phép click qua container */
             overflow: hidden;
-            z-index: 9999; /* Đảm bảo container nằm trên cùng */
+            z-index: 9999;
+            /* Đảm bảo container nằm trên cùng */
         }
 
         /* Kiểu dáng của trái tim */
         .heart {
             position: absolute;
-            top: -50px; /* Bắt đầu ngoài màn hình */
+            top: -50px;
+            /* Bắt đầu ngoài màn hình */
             width: 20px;
             height: 20px;
             animation: fall 5s linear infinite;
@@ -48,48 +111,454 @@
         /* Keyframes cho hiệu ứng rơi */
         @keyframes fall {
             0% {
-        transform: translate(0, 0) ;
-        opacity: 1;
-    }
-    25% {
-        transform: translate(40px, 25vh);
-        opacity: 0.8;
-    }
-    50% {
-        transform: translate(-40px, 50vh) ;
-        opacity: 0.6;
-    }
-    75% {
-        transform: translate(40px, 75vh) ;
-        opacity: 0.4;
-    }
-    100% {
-        transform: translate(0, 100vh) ;
-        opacity: 0;
-    }
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: translate(40px, 25vh);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translate(-40px, 50vh);
+                opacity: 0.6;
+            }
+
+            75% {
+                transform: translate(40px, 75vh);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translate(0, 100vh);
+                opacity: 0;
+            }
         }
+
+        #guestbook {
+            background-color: #fdfdfd;
+            padding: 40px 20px;
+            border-radius: 8px;
+            border-color: #ff1000;
+
+        }
+
+        #guestbook .container {
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #b45f5f;
+            box-shadow: 0 0 5px rgba(180, 95, 95, 0.3);
+        }
+
+        .btn {
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #9f4b4b;
+        }
+
+.wish-list-container {
+    max-height: 300px; /* Giới hạn chiều cao container */
+    overflow-y: auto; /* Thêm thanh cuộn khi danh sách quá dài */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-group {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-group-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item strong {
+    font-size: 16px;
+    color: #b45f5f;
+}
+
+.list-group-item small {
+    color: #999;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.wish-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.wish-list-container::-webkit-scrollbar-thumb {
+    background-color: #b45f5f;
+    border-radius: 10px;
+}
+
+.wish-list-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+/* Đảm bảo hai phần (form và danh sách lời chúc) nằm trên cùng một hàng */
+.row {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa hai phần */
+}
+
+/* Đảm bảo chiều rộng bằng nhau */
+.col-md-6 {
+    flex: 1; /* Đảm bảo các cột có kích thước bằng nhau */
+}
+
+/* Căn chỉnh card */
+.card {
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Danh sách lời chúc */
+.wish-list-container {
+    max-height: 300px;
+    overflow-y: auto; /* Hiển thị thanh cuộn nếu nội dung quá dài */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.wish-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.wish-list-container::-webkit-scrollbar-thumb {
+    background-color: #b45f5f;
+    border-radius: 10px;
+}
+
+.wish-list-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.list-group-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+
+/* .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+} */
+
     </style>
 </head>
-<body>
-    <!-- Container chứa các trái tim -->
-    <div id="heart-container"></div>
 
-    <!-- Nội dung khác của trang web -->
-    <h1 style="text-align: center; margin-top: 50px;">Chào mừng đến với trang web của tôi!</h1>
+<body id="top">
+    <!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+    <section class="hero">
+        <section class="navigation">
+            <header>
+                <div class="header-content">
+                    <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav">
+                                <li><a href="#intro">Câu chuyện tình yêu</a></li>
+                                <li><a href="#events">Tiệc cưới</a></li>
+                                <!-- <li><a href="#instagram">Instagram</a></li> -->
+                                <li><a href="#eng-pics">Ảnh cưới</a></li>
+                                <!-- <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li> -->
+                            </ul>
+                            <!-- <ul class="member-actions"> -->
+                            <!-- <li><a href="#map" class="login">Địa điểm</a></li> -->
+                            <!-- <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li> -->
+                            <!-- </ul> -->
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="hero-content text-center">
+                        <!--<h1>Ram and Antara</h1>-->
+                        <img src="img/logo-lg.png">
+                        <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
+                        <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 hidden-xs"></div>
+                <!-- <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
+                        class="btn btn-accent btn-large rsvp-btn">RSVP</a></div> -->
+                <div class="col-sm-4 hidden-xs"></div>
+            </div>
+        </div>
+        <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+    </section>
+
+    <section id="invitation" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>Xứng đôi cưới thôi 👌</h3>
+                    <p>Hôn lễ diễn ra vào ngày mồng 7 & 8 tháng 12</p>
+                    <!-- <div class="share-bar"></div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="heart-container"></div>
+    <!-- <section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">How we met</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
+            <div class="col-md-6">
+                <p>
+                    I first saw Antara in the Fall of 2008 when we started our undergrad. I was instantly attracted to
+                    her but was far too nervous to speak to her. I had told my friend I liked her and news had traveled
+                    fast and she soon found out. Her first reaction was "Who is Ram?" and she began searching for me in
+                    the class. She started to take notice of me and no matter how boring the lecture was, we never
+                    missed a class after that. After a good few months I finally plucked up the courage to ask her out
+                    and the rest is history :)
+                </p>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.jpg" class="wp2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.jpg" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.jpg" class="wp9"></div>
+        </div>
+    </div>
+</section> -->
+
+    <section class="events section-padding" id="events">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="header">Tiệc cưới</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                    <div class="wp3">
+                        <p><strong>Nhà trai</strong></p>
+
+                        <h5> 16:00 07/12/2024 </h5>
+                        <p>Bữa cơm thân mật được tổ chức tại nhà văn hóa xóm Liên Minh(cũ), xã Kim Liên, huyện Nam Đàn
+                        </p>
+
+                    </div>
+                    <div class="wp5">
+                        <h5>10:30 08/12/2024</h5>
+                        <p>Lễ đón dâu sẽ được tổ chức từ lúc 10h và bắt đầu tiệc lúc 11h tại nhà văn hóa xóm Liên
+                            Minh(cũ), xã Kim Liên, huyện Nam Đàn </p>
+                    </div>
+                    <button class="btn btn-accent btn-small" onclick="openGoogleMap()">Tìm đường tới nhà trai</button>
+                    <script>
+                        function openGoogleMap() {
+                            window.open("https://www.google.com/maps?q=18.671900, 105.574688", "_blank");
+                        }
+                    </script>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                    <div class="wp4">
+                        <p><strong>Nhà gái</strong></p>
+
+                        <h5>16:00 06/12/2024</h5>
+                        <p>Bữa cơm thân mật tại nhà gái sẽ được tổ chức vào 16h ngày 06/12 tại nhà riêng ở xã Nam
+                            Anh,huyện Nam Đàn</p>
+                    </div>
+                    <button class="btn btn-accent btn-small" onclick="openGoogleMap2()">Tìm đường tới nhà gái</button>
+                    <script>
+                        function openGoogleMap2() {
+                            window.open("https://www.google.com/maps?q=18.712042, 105.528415", "_blank");
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <!--<div class="row">
+            <div class="col-xs-12 section-border section-padding">
+            </div>
+        </div>-->
+        </div>
+
+
+
+    </section>
+
+    <!-- <section id="instagram" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>A picture is worth a thousand words!</h3>
+                <p>Help us capture the moment, tag your photos with the hashtag
+                    <a href="https://instagram.com/explore/tags/ramandantara/" target="_blank">#RamAndAntara</a>
+                </p>
+            </div>
+        </div>
+        <div class="row section-border wp7">
+            <div class="col-md-4 col-md-offset-4">
+                <img src="img/iphone_instagram.jpg">
+            </div>
+        </div>
+    </div>
+</section> -->
+    <button id="musicButton" style="position: fixed; 
+      bottom: 20px; 
+      left: 20px; 
+      width: 60px; 
+      height: 60px; 
+      background-color: #ff1000; 
+      color: white; 
+      border: none; 
+      border-radius: 50%; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+      cursor: pointer; 
+      font-size: 24px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      z-index: 1000; 
+      transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#cc0000'"
+        onmouseout="this.style.backgroundColor='red'">
+        <img id="icon" src="img/icons8-speaker-on-96.png" alt="Loa" style="width: 30px; height: 30px;">
+    </button>
+
+    <!-- Audio -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="img/CuoiNhauDi.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
-        // JavaScript Inline
+        // JavaScript logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const musicButton = document.getElementById('musicButton');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const icon = document.getElementById('icon');
+            setInterval(createHeart, 1500);
+            let isPlaying = false;
+            let userPaused = false;
+            // Hiệu ứng ripple
+            musicButton.addEventListener('click', (e) => {
+                const ripple = document.createElement('span');
+                ripple.style.width = ripple.style.height = '100px';
+                ripple.style.position = 'absolute';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.top = `${e.offsetY - 50}px`;
+                ripple.style.left = `${e.offsetX - 50}px`;
+                musicButton.appendChild(ripple);
 
-        // Lấy container chứa trái tim
+                // Xóa ripple sau khi hiệu ứng hoàn tất
+                ripple.addEventListener('animationend', () => {
+                    ripple.remove();
+                });
+
+                // Bật/tắt nhạc
+                if (isPlaying) {
+                    backgroundMusic.pause(); // Dừng nhạc
+                    icon.src = 'img/icons8-speaker-off-96.png'; // Biểu tượng loa tắt
+                    userPaused = true; // Người dùng đã tắt nhạc
+                } else {
+                    backgroundMusic.play(); // Phát nhạc
+                    icon.src = 'img/icons8-speaker-on-96.png'; // Biểu tượng loa bật
+                    userPaused = false;
+                }
+                isPlaying = !isPlaying; // Đảo trạng thái
+            });
+            document.addEventListener('click', () => {
+                if (!userPaused && backgroundMusic.paused) {
+                    backgroundMusic.play();
+                    isPlaying = true;
+                    icon.src = 'img/icons8-speaker-on-96.png';
+                }
+            });
+        });
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        // Ngăn chặn F12 và các phím DevTools
+        document.addEventListener('keydown', (e) => {
+            // Chặn F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
+            // Chặn Ctrl+Shift+I hoặc Ctrl+Shift+J
+            if ((e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
         const heartContainer = document.getElementById('heart-container');
-
-        // Mảng màu sắc cho trái tim
-        const colors = ['#FF69B4', '#FFB6C1', '#FFC0CB', '#DB7093', '#FF1493'];
-
-        // Hàm tạo một trái tim mới
         function createHeart() {
             const heart = document.createElement('img');
-            heart.src = 'img/icons8-heart-94.png'; 
+            heart.src = 'img/icons8-heart-94.png';
             heart.classList.add('heart');
 
             // Vị trí xuất hiện ngẫu nhiên trên trục X
@@ -117,8 +586,381 @@
             });
         }
 
-        // Tạo trái tim mỗi 500ms
-        setInterval(createHeart, 1000);
+        // loi chuc 
+        document.addEventListener('DOMContentLoaded', () => {
+            const wishForm = document.getElementById('wishForm');
+            const wishList = document.getElementById('wishList');
+
+            // Hàm hiển thị lời chúc từ localStorage
+            function displayWishes() {
+                const wishes = JSON.parse(localStorage.getItem('wishes')) || [];
+                wishList.innerHTML = '';
+                wishes.forEach(wish => {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    li.textContent = `${wish.name}: ${wish.message}`;
+                    wishList.appendChild(li);
+                });
+            }
+
+            // Xử lý khi người dùng gửi form
+            wishForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name && message) {
+                    const wishes = JSON.parse(localStorage.getItem('wishes')) || [];
+                    wishes.push({ name, message });
+                    localStorage.setItem('wishes', JSON.stringify(wishes));
+
+                    displayWishes();
+                    wishForm.reset(); // Reset form sau khi gửi
+                }
+            });
+
+            // Hiển thị lời chúc khi tải trang
+            displayWishes();
+        });
+
     </script>
+
+    <!-- Ripple Effect Keyframes -->
+    <style>
+        @keyframes ripple {
+            from {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+    <section id="eng-pics" class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="header">Ảnh cưới</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/1.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/1.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/2.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/2.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/3.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/3.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/4.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/4.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/5.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/5.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/9.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/9.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/6.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/6.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/ah/7.jpg">
+                        <div class="img-wrap" style="padding: 4px;">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/ah/7.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row hidden-lg hidden-md hidden-xs">
+                <div class="col-xs-12 section-border section-padding"></div>
+            </div>
+        </div>
+        <!--<div class="row">
+        <div class="col-md-12">
+            <div class="diamond floating-logo">
+                <img src="img/sketch-logo.png" alt="Sketch Logo">
+                <div class="ring"></div>
+            </div>
+        </div>
+    </div>-->
+    </section>
+
+    <!-- <section id="guestbook" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>Gửi lời chúc của bạn!</h3>
+                    <form id="wishForm">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" placeholder="Tên của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-control" rows="4" placeholder="Lời chúc"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent btn-small">Gửi lời chúc</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Lời chúc từ mọi người:</h4>
+                    <ul id="wishList" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="guestbook" class="section-padding">
+        <div class="container">
+            <div class="row" style="display: flex; justify-content: center; gap: 20px;">
+                <!-- Form Gửi Lời Chúc -->
+                <div class="col-md-6">
+                    <div class="card p-4 shadow-sm">
+                        <h3 class="text-center mb-4" style="color: #b45f5f;">Gửi lời chúc của bạn</h3>
+                        <form id="wishForm">
+                            <div class="form-group mb-3">
+                                <label for="name" class="form-label">Nhập họ tên*</label>
+                                <input type="text" id="name" class="form-control" placeholder="Tên của bạn" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="message" class="form-label">Nhập lời chúc của bạn*</label>
+                                <textarea id="message" class="form-control" rows="4" placeholder="Lời chúc" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" style="background-color: #b45f5f; border: none;">Gửi lời chúc</button>
+                        </form>
+                    </div>
+                </div>
+    
+                <!-- Hiển Thị Lời Chúc -->
+                <div class="col-md-6">
+                    <div class="card p-4 shadow-sm">
+                        <h4 class="text-center mb-4">Lời chúc từ mọi người</h4>
+                        <div id="wishListContainer" class="wish-list-container">
+                            <ul id="wishList" class="list-group"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <section id="video-bg" class="hidden-sm hidden-xs">
+        <div id="bgndVideo" class="player"
+            data-property="{videoURL:'https://www.youtube.com/watch?v=JH4QlPSILso',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:60, stopAt:280, opacity:1}">
+        </div>
+        <div id="video-content">
+            <h5>Nam Đàn</h5>
+            <p>Nghệ An</p>
+        </div>
+    </section>
+
+    <!-- <section id="map" class="section-padding">
+    <div class="text-center">
+        <h5>Địa điểm tổ chức</h3>
+    </div>
+    <div id="map-canvas"></div>
+    <div id="map-content-wrapper" class="container pointer-events-none">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                <div class="text-center">
+                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
+                    </div>
+                </div>
+                <div id="map-content" class="pointer-events-auto">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>ITC Fortune Park</h5>
+                            <p>Kona Expressway, Howrah, West Bengal 711403, India</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Mr. Amit Roy</h5>
+                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+91 9412345678</a><br>
+                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+91 7123456789</a></p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-6" style="padding: 5px;">
+                            <a class="btn btn-fill btn-small"
+                               href="https://m.uber.com/ul/?action=setPickup&client_id=Yh7Dl6SjB56RY2JuuZF8ttVa6ryFV78W&pickup=my_location&dropoff[formatted_address]=Fortune%20Park%20Panchwati%20-%20Hotels%20in%20Kolkata%2C%20Howrah%2C%20West%20Bengal%2C%20India&dropoff[latitude]=22.593276&dropoff[longitude]=88.270277"><i
+                                    class="fa fa-taxi"></i>&nbsp;&nbsp;Book Uber</a>
+                        </div>
+                        <div class="col-md-6" style="padding: 5px;">
+                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
+                                map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    <!-- <section class="rsvp text-center" id="rsvp">
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Thank you!</h3>
+                        <p>We are glad to see you join us on our big day.</p>
+                        <div id="add-to-cal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>What are you waiting for?</h3>
+                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                <form id="rsvp-form" class="rsvp-form" action="" method="POST">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
+                                    placeholder="Your email" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="name" class="" placeholder="Your name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0" max="4"
+                                    placeholder="Husband/Wife or kids" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                    class="" min="0" placeholder="Invite code" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="alert-wrapper"></div>
+                    </div>
+                    <button class="btn-fill rsvp-btn">
+                        Yes,
+                        that's me!
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center content">
+                    <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                    <!-- <p>Crafted by Ram with lots of <span class="fa fa-heart pulse2"></span> for Antara</p> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="js/vendor/ouical.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script> -->
+    <!-- Google Analytics -->
+    <!-- <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-46465113-4', 'auto');
+    ga('send', 'pageview');
+</script> -->
 </body>
+
 </html>
