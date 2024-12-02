@@ -459,11 +459,16 @@
 
     <script>
         // JavaScript logic
+        let isRun = false;
         document.addEventListener('DOMContentLoaded', () => {
             const musicButton = document.getElementById('musicButton');
             const backgroundMusic = document.getElementById('backgroundMusic');
             const icon = document.getElementById('icon');
-            setInterval(createHeart, 1500);
+            if(!isRun) {
+                setInterval(createHeart, 10000);
+                isRun = true;
+                console.log('run createHeart');
+            }
             let isPlaying = false;
             let userPaused = false;
             // Hiệu ứng ripple
@@ -522,6 +527,7 @@
 
         const heartContainer = document.getElementById('heart-container');
         function createHeart() {
+            console.log('createHeart');
             const heart = document.createElement('img');
             heart.src = 'img/icons8-heart-94.png';
             heart.classList.add('heart');
