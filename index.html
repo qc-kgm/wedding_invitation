@@ -465,6 +465,9 @@
             const backgroundMusic = document.getElementById('backgroundMusic');
             const icon = document.getElementById('icon');
             if(!isRun) {
+                createHeart();
+                setTimeout(createHeart, 3000);
+                setTimeout(createHeart, 6000);
                 setInterval(createHeart, 10000);
                 isRun = true;
             }
