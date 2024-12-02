@@ -467,7 +467,6 @@
             if(!isRun) {
                 setInterval(createHeart, 10000);
                 isRun = true;
-                console.log('run createHeart');
             }
             let isPlaying = false;
             let userPaused = false;
@@ -527,7 +526,6 @@
 
         const heartContainer = document.getElementById('heart-container');
         function createHeart() {
-            console.log('createHeart');
             const heart = document.createElement('img');
             heart.src = 'img/icons8-heart-94.png';
             heart.classList.add('heart');
